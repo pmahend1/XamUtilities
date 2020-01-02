@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\XamUtilities\XamUtilities\XamUtilities.csproj" />
+    <ProjectReference Include="..\..\Source\XamUtilities\XamUtilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>
