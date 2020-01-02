@@ -1,6 +1,6 @@
 # XamUtilities
 
-<img src="./Images/icon.png" width="200">
+<img src="https://raw.githubusercontent.com/pmahend1/XamUtilities/master/Images/icon.png" width="200">
 
 Utilities for Xamarin Forms
 
@@ -62,7 +62,7 @@ Add nuget to your Xamarin forms project
 </ContentPage>
 ```
 
-<img src="./Images/Screenshot_roundframe.png" width="300">
+<img src="https://raw.githubusercontent.com/pmahend1/XamUtilities/master/Images/Screenshot_roundframe.png" width="300">
 
 ### SkiaCircleContentView
 
@@ -111,4 +111,4 @@ Add nuget to your Xamarin forms project
 </ContentPage>
 ```
 
-<img src="./Images/Screenshot_SkiaCircleContentView.png" width="300">
+<img src="https://raw.githubusercontent.com/pmahend1/XamUtilities/master/Images/Screenshot_SkiaCircleContentView.png" width="300">
