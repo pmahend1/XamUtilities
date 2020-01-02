@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamUtilities.Android", "Xam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamUtilities.iOS", "XamUtilities\XamUtilities.iOS\XamUtilities.iOS.csproj", "{A470483B-5428-431F-9A84-E65933C9A2D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamUtilities", "XamUtilities\XamUtilities\XamUtilities.csproj", "{CFA9E675-2B24-4B6D-8E0C-455056A6B9BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamUtilities", "XamUtilities\XamUtilities\XamUtilities.csproj", "{CFA9E675-2B24-4B6D-8E0C-455056A6B9BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{7484D2F4-295E-4A05-B4FC-B4BA2501A1BD}"
 EndProject
@@ -15,9 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamUtilities.Sample.Android
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamUtilities.Sample.iOS", "XamUtilities.Sample\XamUtilities.Sample.iOS\XamUtilities.Sample.iOS.csproj", "{848C75F7-4D00-4331-8563-98BC6EF8BAE6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamUtilities.Sample", "XamUtilities.Sample\XamUtilities.Sample\XamUtilities.Sample.csproj", "{A2175913-76EF-4628-A910-82B7A6266707}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{239FDBB2-39E3-429B-9283-E1C13094FACD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamUtilities.Sample", "XamUtilities.Sample\XamUtilities.Sample\XamUtilities.Sample.csproj", "{A2175913-76EF-4628-A910-82B7A6266707}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -114,9 +112,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C6FDBA21-B6B4-4AE5-8613-DF78A82D25A4} = {239FDBB2-39E3-429B-9283-E1C13094FACD}
-		{A470483B-5428-431F-9A84-E65933C9A2D8} = {239FDBB2-39E3-429B-9283-E1C13094FACD}
-		{CFA9E675-2B24-4B6D-8E0C-455056A6B9BB} = {239FDBB2-39E3-429B-9283-E1C13094FACD}
 		{69ABEEB0-A07E-4A1B-AF66-D56A636E27CF} = {7484D2F4-295E-4A05-B4FC-B4BA2501A1BD}
 		{848C75F7-4D00-4331-8563-98BC6EF8BAE6} = {7484D2F4-295E-4A05-B4FC-B4BA2501A1BD}
 		{A2175913-76EF-4628-A910-82B7A6266707} = {7484D2F4-295E-4A05-B4FC-B4BA2501A1BD}

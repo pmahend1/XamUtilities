@@ -1,7 +1,14 @@
 # XamUtilities
+
+<img src="./Images/icon.png" width="200">
+
 Utilities for Xamarin Forms
 
 ## Release notes
+
+### Version 1.1.0
+
+- SkiaCircleContentView added
 
 ### Version 1.0.0
 
@@ -11,8 +18,9 @@ Utilities for Xamarin Forms
 
 Add nuget to your Xamarin forms project
 
-```xml
+### RoundFrame
 
+```xml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ref="clr-namespace:XamUtilities.Views;assembly=XamUtilities"
@@ -54,6 +62,53 @@ Add nuget to your Xamarin forms project
 </ContentPage>
 ```
 
-## Screenshots
+<img src="./Images/Screenshot_roundframe.png" width="300">
 
-![RoundFrame](./ScreenShots/RoundFrame.png)
+### SkiaCircleContentView
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:ref="clr-namespace:XamUtilities.Views;assembly=XamUtilities"
+             mc:Ignorable="d"
+             x:Class="XamUtilities.Sample.SkiaCircleContentViewsPage"
+             Title="SkiaCircleContentView">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <ref:SkiaCircleContentView BorderColor="Red"
+                                       BorderWidth="10"
+                                       Grid.Row="0">
+                <ref:SkiaCircleContentView.BaseContentView>
+                    <Label Text="I am inside SkiaCanvas"
+                           TextColor="Blue"
+                           FontSize="Medium"
+                           LineBreakMode="WordWrap"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center" />
+                </ref:SkiaCircleContentView.BaseContentView>
+            </ref:SkiaCircleContentView>
+            <ref:SkiaCircleContentView BorderColor="Blue"
+                                       BackgroundColor="Yellow"
+                                       BorderWidth="5"
+                                       Grid.Row="1">
+                <ref:SkiaCircleContentView.BaseContentView>
+                    <Image Source="xamutilities.png"
+                           HeightRequest="125"
+                           WidthRequest="125" />
+                </ref:SkiaCircleContentView.BaseContentView>
+            </ref:SkiaCircleContentView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+```
+
+<img src="./Images/Screenshot_SkiaCircleContentView.png" width="300">

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AbsoluteLayout xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+                mc:Ignorable="d"
+                x:Class="XamUtilities.Views.SkiaCircleContentView"
+                x:Name="skiaCircleContentView">
+    <skia:SKCanvasView AbsoluteLayout.LayoutFlags="All"
+                       AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                       PaintSurface="SKCanvasView_PaintSurface"
+                       x:Name="skCanvasView"
+                       IgnorePixelScaling="True" />
+    <ContentView x:Name="contentView"
+                 AbsoluteLayout.LayoutFlags="XProportional,YProportional"
+                 AbsoluteLayout.LayoutBounds="0.5,0.5" />
+</AbsoluteLayout>

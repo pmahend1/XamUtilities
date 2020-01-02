@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:ref="clr-namespace:XamUtilities.Views;assembly=XamUtilities"
+             mc:Ignorable="d"
+             x:Class="XamUtilities.Sample.MainPage"
+             Title="RoundFrame">
+    <StackLayout HorizontalOptions="FillAndExpand"
+                 Padding="20">
+        <ref:RoundFrame Diameter="150"
+                        BackgroundColor="Blue">
+            <Label Text="Round Frame"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+        </ref:RoundFrame>
+        <ref:RoundFrame HeightRequest="175"
+                        d:CornerRadius="87.5"
+                        BackgroundColor="Red">
+            <Label Text="Round Frame"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+        </ref:RoundFrame>
+        <ref:RoundFrame WidthRequest="125"
+                        HeightRequest="125"
+                        HorizontalOptions="Center"
+                        d:CornerRadius="62.5"
+                        BackgroundColor="Green">
+            <Label Text="Round Frame"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+        </ref:RoundFrame>
+    </StackLayout>
+</ContentPage>

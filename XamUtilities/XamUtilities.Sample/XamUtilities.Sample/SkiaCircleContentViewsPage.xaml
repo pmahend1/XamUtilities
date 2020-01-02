@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:ref="clr-namespace:XamUtilities.Views;assembly=XamUtilities"
+             mc:Ignorable="d"
+             x:Class="XamUtilities.Sample.SkiaCircleContentViewsPage"
+             Title="SkiaCircleContentView">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <ref:SkiaCircleContentView BorderColor="Red"
+                                       BorderWidth="10"
+                                       Grid.Row="0">
+                <ref:SkiaCircleContentView.BaseContentView>
+                    <Label Text="I am inside SkiaCanvas"
+                           TextColor="Blue"
+                           FontSize="Medium"
+                           LineBreakMode="WordWrap"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center" />
+                </ref:SkiaCircleContentView.BaseContentView>
+            </ref:SkiaCircleContentView>
+            <ref:SkiaCircleContentView BorderColor="Blue"
+                                       BackgroundColor="Yellow"
+                                       BorderWidth="5"
+                                       Grid.Row="1">
+                <ref:SkiaCircleContentView.BaseContentView>
+                    <Image Source="xamutilities.png"
+                           HeightRequest="125"
+                           WidthRequest="125" />
+                </ref:SkiaCircleContentView.BaseContentView>
+            </ref:SkiaCircleContentView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
