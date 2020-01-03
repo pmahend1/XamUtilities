@@ -4,6 +4,8 @@
 
 Utilities for Xamarin Forms
 
+**[Nuget XamUtilities.1.1.0](https://www.nuget.org/packages/XamUtilities/)**
+
 ## Release notes
 
 ### Version 1.1.0
