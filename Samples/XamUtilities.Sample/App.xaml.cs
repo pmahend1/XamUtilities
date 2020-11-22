@@ -1,6 +1,5 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
+using XamUtilities.Sample.Material;
 
 namespace XamUtilities.Sample
 {
@@ -10,7 +9,7 @@ namespace XamUtilities.Sample
         {
             InitializeComponent();
 
-            MainPage = new MDHomePage();
+            MainPage = new MaterialViewsDemo();
         }
 
         protected override void OnStart()
