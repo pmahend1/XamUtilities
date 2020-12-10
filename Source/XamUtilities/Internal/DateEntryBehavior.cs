@@ -8,11 +8,12 @@ namespace XamUtilities.Internal
 {
     public class DateEntryBehavior : Behavior<Entry>
     {
-       
-        IDictionary<int, char> _positions;
-        Dictionary<int, string> Parts = new Dictionary<int, string>();
+        private IDictionary<int, char> _positions;
+        private Dictionary<int, string> Parts = new Dictionary<int, string>();
+        private string Separator;
 
         private string _mask = "";
+
         public string Mask
         {
             get => _mask;
@@ -22,26 +23,48 @@ namespace XamUtilities.Internal
                 SetPositions();
             }
         }
+
         protected override void OnAttachedTo(Entry bindable)
         {
             base.OnAttachedTo(bindable);
-            //if (string.IsNullOrEmpty(bindable.Text))
-            //    return;
-            //else
-            //{
+
             SetPositions();
             var dateEntry = (DateEntry)bindable;
-                Mask = dateEntry.Format;
 
-                var rx = new Regex(@"\w+|'[\w\s]*'");
-                var matches = rx.Matches(dateEntry.Format);
-                for (int i = 0; i < matches.Count; i++)
+            var rx = new Regex(@"\w+|'[\w\s]*'");
+            var matches = rx.Matches(dateEntry.Format);
+
+            var rgx = new Regex(@"[^a-zA-Z0-9\s]+");
+            var spCharMatches = rgx.Matches(dateEntry.Format);
+            Separator = spCharMatches[0].Value ?? "/";
+
+            string maskTemp = string.Empty;
+            for (int i = 0; i < matches.Count; i++)
+            {
+
+                Parts.Add(i, matches[i].Value);
+                if (i != 0)
+                    maskTemp += Separator;
+                if (Parts[i].Contains("M"))
                 {
-                    Parts.Add(i, matches[i].Value);
+                    maskTemp += "MM";
                 }
-                dateEntry.TextChanged += OnDateEntryTextChanged;
+                if (Parts[i].Contains("d"))
+                {
+                    maskTemp += "dd";
+                }
+
+                if (Parts[i].Contains("y"))
+                {
+                    maskTemp += "yyyy";
+                }
                
-            //}
+            }
+
+
+
+            Mask = maskTemp;
+            dateEntry.TextChanged += OnDateEntryTextChanged;
 
         }
 
@@ -67,58 +90,39 @@ namespace XamUtilities.Internal
                 string updatedText = string.Empty;
                 for (int i = 0; i < matches.Count; i++)
                 {
-                    Debug.WriteLine("Match value: " +matches[i].Value);
+                    Debug.WriteLine("Match value: " + matches[i].Value);
                     if (int.TryParse(matches[i].Value, out var part))
                     {
                         Debug.WriteLine(part);
+                        if (i != 0)
+                            updatedText += Separator;
                         if (Parts[i].Contains("M"))
                         {
-       
-                            updatedText = (part>12)  ? "12" :part.ToString();
-
+                            updatedText += (part > 12) ? "12" : part.ToString();
                         }
                         if (Parts[i].Contains("d"))
                         {
-                            
                             updatedText += (part > 31) ? "31" : part.ToString();
-
-
                         }
 
                         if (Parts[i].Contains("y"))
                         {
                             updatedText += (part > 9999) ? "9999" : part.ToString();
-
                         }
-
                     }
-
-
                 }
                 if (entry.Text != updatedText)
                     entry.Text = updatedText;
-
             }
-            //foreach (var position in _positions)
-            //    if (text.Length >= position.Key + 1)
-            //    {
-            //        var value = position.Value.ToString();
-            //        if (text.Substring(position.Key, 1) != value)
-            //            text = text.Insert(position.Key, value);
-            //    }
-
-            //if (entry.Text != text)
-            //    entry.Text = text;
         }
 
         protected override void OnDetachingFrom(Entry bindable)
         {
             bindable.TextChanged -= OnDateEntryTextChanged;
             base.OnDetachingFrom(bindable);
-
         }
 
-        void SetPositions()
+        private void SetPositions()
         {
             if (string.IsNullOrEmpty(Mask))
             {
