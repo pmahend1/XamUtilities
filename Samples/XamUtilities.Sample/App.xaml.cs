@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace XamUtilities.Sample
 {
@@ -10,7 +8,7 @@ namespace XamUtilities.Sample
         {
             InitializeComponent();
 
-            MainPage = new MDHomePage();
+            MainPage = new DateEntryPage();
         }
 
         protected override void OnStart()
